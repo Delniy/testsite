@@ -1,44 +1,40 @@
-# python-getting-started
+# Frontera
 
-A barebones Python app, which can easily be deployed to Heroku.
+## Overview
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+Frontera is a web crawling framework consisting of [crawl frontier](http://nlp.stanford.edu/IR-book/html/htmledition/the-url-frontier-1.html), 
+and distribution/scaling primitives, allowing to build a large scale online web crawler. 
 
-## Running Locally
+Frontera takes care of the logic and policies to follow during the crawl. It stores and prioritises links extracted by 
+the crawler to decide which pages to visit next, and capable of doing it in distributed manner.
 
-Make sure you have Python [installed properly](http://install.python-guide.org).  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/) and [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
+## Main features
 
-```sh
-$ git clone git@github.com:heroku/python-getting-started.git
-$ cd python-getting-started
+- Online operation: small requests batches, with parsing done right after fetch.
+- Pluggable backend architecture: low-level storage logic is separated from crawling policy.
+- Three run modes: single process, distributed spiders, distributed backend and spiders.
+- Transparent data flow, allowing to integrate custom components easily using Kafka.
+- Message bus abstraction, providing a way to implement your own transport (ZeroMQ and Kafka are available out of the box).
+- RDBMS and HBase backends.
+- Revisiting logic with RDBMS.
+- Optional use of Scrapy for fetching and parsing.
+- 3-clause BSD license, allowing to use in any commercial product.
 
-$ pip install -r requirements.txt
+## Installation
 
-$ createdb python_getting_started
-
-$ python manage.py migrate
-$ python manage.py collectstatic
-
-$ heroku local
+```bash
+$ pip install frontera
 ```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-
-$ heroku run python manage.py migrate
-$ heroku open
-```
-or
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## Documentation
 
-For more information about using Python on Heroku, see these Dev Center articles:
+- [Main documentation at RTD](http://frontera.readthedocs.org/)
+- [EuroPython 2015 slides](http://www.slideshare.net/sixtyone/fronteraopen-source-large-scale-web-crawling-framework)
+- [BigDataSpain 2015 slides](https://speakerdeck.com/scrapinghub/frontera-open-source-large-scale-web-crawling-framework)
 
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)
+## Community
+
+Join our Google group at https://groups.google.com/a/scrapinghub.com/forum/#!forum/frontera or check GitHub issues and 
+pull requests.
+
+

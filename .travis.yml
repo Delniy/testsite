@@ -1,0 +1,32 @@
+language: python
+python: 2.7
+
+env:
+  - TOXENV=py27
+  - TOXENV=flake8
+
+install:
+  - pip install -U tox wheel codecov
+  - pip install -r requirements/tests.txt
+
+before_script:
+  - mysql -u root -e "set global innodb_large_prefix=1;"
+  - mysql -u root -e "set global innodb_file_format='Barracuda';"
+  - mysql -u root -e "set global innodb_file_per_table=true;"
+  - tests/run_zmq_broker.sh
+
+script: tox
+
+after_success:
+  - codecov
+
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: scrapinghub
+  password:
+    secure: bG1ycgBJrVfgBsHAwaWScL2V1x52/aZy2znE2kFzFfYq95HS51mu1GO2PKwpATJyMCs/xUIKGhiBtoo8LzNmNU2kPgarQFwzpLkx2ninOm+3uAwuIfGGWsonBW/h854n+cNwppJOlfEOxvMVerVVpdV4EFeJfEkVYascwOBbnqo=
+  on:
+    branch: master
+    tags: true
+    condition: $TOXENV == py27
