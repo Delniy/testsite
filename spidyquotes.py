@@ -109,6 +109,9 @@ def random_quote():
     i = random.randrange(0, len(QUOTES))
     return render_template('index.html', quotes=[QUOTES[i]])
 
+@app.route("/category/<cat>")
+def category(cat=1):
+    return render_template('category/'+cat+'.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
