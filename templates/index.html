@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 <h3>Главная</h3>
 <a href="{{ url_for('category', cat=1) }}">Раздел_1</a>
 <a href="{{ url_for('category', cat=2) }}">Раздел_2</a>
@@ -6,3 +8,4 @@
 <a href="{{ url_for('category', cat=5) }}">Раздел_5</a>
 <a href="{{ url_for('category', cat=6) }}">Раздел_6</a>
 <a href="{{ url_for('category', cat=18) }}">Раздел_18</a>
+{% endblock %}
