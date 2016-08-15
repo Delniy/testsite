@@ -2,4 +2,11 @@
 {% block content %}
 <h3>Раздел_4</h3>
 <a href="{{ url_for('index') }}"><h4>Главная</h4></a>
+<div class='category'>
+	<a href="{{ url_for('category', cat=9) }}">Раздел_9</a>
+	<a href="{{ url_for('category', cat=10) }}">Раздел_10</a>
+</div>
+<div class='article'>
+	<a href="{{ url_for('article', art=8) }}">Статья_8</a>
+</div>
 {% endblock %}
