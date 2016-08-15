@@ -1,11 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 <h3>Главная</h3>
-<a href="{{ url_for('category', cat=1) }}">Раздел_1</a>
-<a href="{{ url_for('category', cat=2) }}">Раздел_2</a>
-<a href="{{ url_for('category', cat=3) }}">Раздел_3</a>
-<a href="{{ url_for('category', cat=4) }}">Раздел_4</a>
-<a href="{{ url_for('category', cat=5) }}">Раздел_5</a>
-<a href="{{ url_for('category', cat=6) }}">Раздел_6</a>
-<a href="{{ url_for('category', cat=18) }}">Раздел_18</a>
+<div class='category'>
+	<a href="{{ url_for('category', cat=1) }}">Раздел_1</a>
+	<a href="{{ url_for('category', cat=2) }}">Раздел_2</a>
+	<a href="{{ url_for('category', cat=3) }}">Раздел_3</a>
+	<a href="{{ url_for('category', cat=4) }}">Раздел_4</a>
+	<a href="{{ url_for('category', cat=5) }}">Раздел_5</a>
+	<a href="{{ url_for('category', cat=6) }}">Раздел_6</a>
+	<a href="{{ url_for('category', cat=18) }}">Раздел_18</a>
+</div>
+<div class='article'>
+	<a href="{{ url_for('article', art=3) }}">Статья_3</a>
+	<a href="{{ url_for('article', art=7) }}">Статья_7</a>
+	<a href="{{ url_for('article', art=16) }}">Статья_16</a>
+	<a href="{{ url_for('article', art=24) }}">Статья_24</a>
+</div>
 {% endblock %}
