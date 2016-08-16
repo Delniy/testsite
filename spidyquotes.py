@@ -40,7 +40,7 @@ def article(art=1):
 
 if os.getenv('DYNO'):
     print('running in heroku, enabling limit of 1 request per second...')
-    Limiter(app, global_limits=["1 per second"])
+    Limiter(app, global_limits=["10 per second"])
 else:
     print('NOT running in heroku...')
 
