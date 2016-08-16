@@ -3,9 +3,9 @@
 <h3>Раздел_2</h3>
 
 <div class='category'>
-	<a href="{{ url_for('category', cat=1) }}">Раздел_1</a>
-	<a href="{{ url_for('category', cat=3) }}">Раздел_3</a>
-	<a href="{{ url_for('category', cat=8) }}">Раздел_8</a>
+	<a class="sel1 match", href="{{ url_for('category', cat=1) }}">Раздел_1</a>
+	<a class="sel1 miss", href="{{ url_for('category', cat=3) }}">Раздел_3</a>
+	<a class="sel2 match", href="{{ url_for('category', cat=8) }}">Раздел_8</a>
 </div>
 <div class='article'>
 	<a href="{{ url_for('article', art=4) }}">Статья_4</a>
