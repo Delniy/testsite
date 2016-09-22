@@ -17,7 +17,6 @@ from flask import abort,request
 
 app = Flask(__name__)
 
-from flask import abort, request
 
 @app.before_request
 def limit_remote_addr():
