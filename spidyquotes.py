@@ -18,10 +18,6 @@ from flask import abort,request
 app = Flask(__name__)
 
 
-@app.before_request
-def limit_remote_addr():
-    if request.remote_addr != '194.165.23.3':
-        abort(403)  # Forbidden
 
 @app.route("/")
 def index():
