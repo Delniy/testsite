@@ -11,7 +11,7 @@ import string
 import base64
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 from collections import Counter, defaultdict
-from flask_limiter import Limiter
+#from flask_limiter import Limiter
 from flask import abort,request
 
 
