@@ -54,5 +54,5 @@ if '__main__' == __name__:
     parser.add_argument('--throttle', action='store_true')
     args = parser.parse_args()
     if args.throttle:
-        limiter = Limiter(app, global_limits=["1 per second"])
+        limiter = Limiter(app, global_limits=["5 per second"])
     app.run(debug=args.debug, host=args.host)
