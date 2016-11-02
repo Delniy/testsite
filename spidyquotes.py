@@ -39,20 +39,20 @@ def article(art=1):
 
 
 
-if os.getenv('DYNO'):
-    print('running in heroku, enabling limit of 1 request per second...')
-    Limiter(app, global_limits=["10 per second"])
-else:
-    print('NOT running in heroku...')
-
-
-if '__main__' == __name__:
-    import argparse
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--debug', action='store_true')
-    parser.add_argument('--host')
-    parser.add_argument('--throttle', action='store_true')
-    args = parser.parse_args()
-    if args.throttle:
-        limiter = Limiter(app, global_limits=["5 per second"])
-    app.run(debug=args.debug, host=args.host)
+# if os.getenv('DYNO'):
+#     print('running in heroku, enabling limit of 1 request per second...')
+#     Limiter(app, global_limits=["10 per second"])
+# else:
+#     print('NOT running in heroku...')
+#
+#
+# if '__main__' == __name__:
+#     import argparse
+#     parser = argparse.ArgumentParser(description=__doc__)
+#     parser.add_argument('--debug', action='store_true')
+#     parser.add_argument('--host')
+#     parser.add_argument('--throttle', action='store_true')
+#     args = parser.parse_args()
+#     if args.throttle:
+#         limiter = Limiter(app, global_limits=["5 per second"])
+#     app.run(debug=args.debug, host=args.host)
