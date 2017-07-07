@@ -64,6 +64,7 @@ body {
 
 .com{
 	left: 30px;
+	position: relative;
 }
 
 .header-box p {
