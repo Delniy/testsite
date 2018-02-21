@@ -1,49 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-{% if tag %}
-<h3>Viewing tag: <a href="{{ url_for('index', tag=tag, page=1) }}">{{ tag }}</a></h3>
-{% endif %}
-<div class="row">
-    <div class="col-md-8">
-{% for quote in quotes %}
-    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
-        <span class="text" itemprop="text">{{ quote.text }}</span>
-        <span>by <small class="author" itemprop="author">{% if authenticated %}<a href="http://goodreads.com{{ quote.author.goodreads_link }}">{% endif %}{{ quote.author.name }}{% if authenticated %}</a>{% endif %}</small></span>
-        <div class="tags">
-            {% if quote.tags %}Tags:{% endif %}
-            <meta class="keywords" itemprop="keywords" content="{{ quote.tags|join(',') }}" /    > 
-            {% for tag in quote.tags %}
-            <a class="tag" href="{{ url_for('index', tag=tag, page=1) }}">{{ tag }}</a>
-            {% endfor %}
-        </div>
-    </div>
-{% else %}
-No quotes found!
-{% endfor %}
-    <nav>
-        <ul class="pager">
-            {% if page and page > 1 %}
-            <li class="previous">
-                <a href="{{ url_for('index', tag=tag, page=page-1) }}"><span aria-hidden="true">&larr;</span> Previous</a>
-            </li>
-            {% endif %}
-            {% if has_next %}
-            <li class="next">
-                <a href="{{ url_for('index', tag=tag, page=page+1) }}">Next <span aria-hidden="true">&rarr;</span></a>
-            </li>
-            {% endif %}
-        </ul>
-    </nav>
-    </div>
-    <div class="col-md-4 tags-box">
-        {% if top_ten_tags %}
-            <h2>Top Ten tags</h2>
-            {% for tag, count in top_ten_tags %}
-            <span class="tag-item">
-            <a class="tag" style="font-size: {{count}}px" href="{{ url_for('index', tag=tag) }}">{{ tag }}</a>
-            </span>
-            {% endfor %}
-        {% endif %}
-    </div>
+<h3>Главная</h3>
+<div class='category1'>
+	<a href="https://testsitecr.herokuapp.com/category/1">Кат1</a>
+</div>
+<div class='category'>
+	<a class="sel1 match", href="{{ url_for('category', cat=1) }}">Раздел_1</a>
+	<a class="sel2 match", href="{{ url_for('category', cat=2) }}">Раздел_2</a>
+	<a class="sel1 miss", href="{{ url_for('category', cat=3) }}">Раздел_3</a>
+	<a class="sel1 match", href="{{ url_for('category', cat=4) }}">Раздел_4</a>
+	<a class="sel1 match", href="{{ url_for('category', cat=6) }}">Раздел_6</a>
+	<a class="sel1 match", href="http://testsitecr.herokuapp.com/category/61/">Раздел_61</a>
+	<a class="sel1 match", href="http://testsitecr.herokuapp.com/category/61">Раздел_61_2</a>
+	<a class="sel1 float", href="{{ url_for('category', cat=18) }}">Раздел_18</a>
+	<a href="http://testsitecr.herokuapp.com/category/1fgghdfghdghdgzdczvbmdsvbfmjdszhbgfvzchvbkasdghfdskhgsahjgfuatgfyhiuashdfbahjfgeruiyahdnfjraefuiyfvhkdjfgbaeurfyhoakjbfuawtgefyhohdbfjgadfoandfjhgsadifhnzgfvbraiefuhjnzkjfbgayerfoiahfahjbdcaufiaofhgagfkagfaodfoiayhfk3.html">mp3</a>
+</div>
+<div class='article'>
+	<a href="{{ url_for('article', art=3) }}">Статья_3</a>
+	<a href="{{ url_for('article', art=7) }}">Статья_7</a>
+	<a href="{{ url_for('article', art=16) }}">Статья_16</a>
+	<a href="{{ url_for('article', art=24) }}">Статья_24</a>
 </div>
 {% endblock %}

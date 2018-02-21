@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Раздел_9</h3>
+
+<div class='category'>
+	<a class="sel1 miss", href="{{ url_for('category', cat=17) }}">Раздел_17</a>
+</div>
+<div class='article'>
+	<a href="{{ url_for('article', art=15) }}">Статья_15</a>
+</div>
+{% endblock %}
