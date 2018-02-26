@@ -16,7 +16,7 @@
 		day = Math.floor(delta / 1000 / 60 / 60 /24 );
 		hours = Math.floor( (delta - day*24*60*60*1000) / 1000 / 60 / 60 );
 		min = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000) / 1000 / 60 );
-		sec = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000 - min*60) / 1000 );
+		sec = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000 - min*60*1000) / 1000 );
 		document.write (day + " дней "  + hours + " часов " + min + " минут " + sec + " секунд ");
 	</script>
 	</p>
@@ -34,7 +34,7 @@
 		day = Math.floor(delta / 1000 / 60 / 60 /24 );
 		hours = Math.floor( (delta - day*24*60*60*1000) / 1000 / 60 / 60 );
 		min = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000) / 1000 / 60 );
-		sec = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000 - min*60) / 1000 );
+		sec = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000 - min*60*1000) / 1000 );
 		document.write (day + " дней "  + hours + " часов " + min + " минут " + sec + " секунд ");
 	</script>
 	</p>
