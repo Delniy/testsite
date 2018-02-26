@@ -6,7 +6,8 @@
 		var now = new Date(hours);
 		var fly = new Date("March 25, 2018 20:40:00");
 		var holiday = new Date("March 23, 2018 16:15:00");
-		document.write (Date(fly - now));
+		var hours = (fly - now)/1000/60/60;
+		document.write ( hours );
 	</script>
 </div>
 
