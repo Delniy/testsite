@@ -25,7 +25,7 @@
 			min = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000) / 1000 / 60 );
 			sec = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000 - min*60*1000) / 1000 );
 			str = (day + " дней "  + hours + " часов " + min + " минут " + sec + " секунд ");
-			document.getElementById("holiday").innerHTML = str.toLocaleTimeString();
+			document.getElementById("holiday").innerHTML = str;
 		}
 	</script>
 	
@@ -41,7 +41,7 @@
 			min = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000) / 1000 / 60 );
 			sec = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000 - min*60*1000) / 1000 );
 			str = (day + " дней "  + hours + " часов " + min + " минут " + sec + " секунд ");
-			document.getElementById("fly").innerHTML = str.toLocaleTimeString();
+			document.getElementById("fly").innerHTML = str;
 		}
 	</script>
 	
