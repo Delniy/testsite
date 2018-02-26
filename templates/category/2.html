@@ -2,45 +2,39 @@
 {% block content %}
 
 <h3>До вылета</h3>
-<div class="comment">
-	<p id = "fly">
-
-	</p>
-</div>
+<p id = "fly"></p>
 
 <h3>До отпуска</h3>
-<div class="comment">
-	<p id ="holiday">
-	</p>
+<p id ="holiday"></p>
 
 	<script type="text/javascript">
-		var myVar = setInterval(myTimer ,1000);
-		var now = new Date();
+		var myVar = setInterval(myHoliday ,1000);
 		var holiday = new Date("March 23, 2018 16:15:00");
-		var delta, hours, min, sec, day, str;
-		function myTimer() {
+		var delta, hours, min, sec, day;
+		function myHoliday() {
+			var now = new Date();
 			delta = holiday - now;
 			day = Math.floor(delta / 1000 / 60 / 60 /24 );
 			hours = Math.floor( (delta - day*24*60*60*1000) / 1000 / 60 / 60 );
 			min = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000) / 1000 / 60 );
 			sec = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000 - min*60*1000) / 1000 );
-			str = (day + " дней "  + hours + " часов " + min + " минут " + sec + " секунд ");
+			var str = (day + " дней "  + hours + " часов " + min + " минут " + sec + " секунд ");
 			document.getElementById("holiday").innerHTML = str;
 		}
 	</script>
 	
 	<script type="text/javascript">
-		var myVar = setInterval(myTimer ,1000);
-		var now = new Date();
+		var myVar = setInterval(myFly ,1000);
 		var fly = new Date("March 25, 2018 20:40:00");
-		var delta, hours, min, sec, day, str;
-		function myTimer() {
+		var delta, hours, min, sec, day;
+		function myFly() {
+			var now = new Date();
 			delta = fly - now;
 			day = Math.floor(delta / 1000 / 60 / 60 /24 );
 			hours = Math.floor( (delta - day*24*60*60*1000) / 1000 / 60 / 60 );
 			min = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000) / 1000 / 60 );
 			sec = Math.floor( (delta - day*24*60*60*1000 - hours*60*60*1000 - min*60*1000) / 1000 );
-			str = (day + " дней "  + hours + " часов " + min + " минут " + sec + " секунд ");
+			var str = (day + " дней "  + hours + " часов " + min + " минут " + sec + " секунд ");
 			document.getElementById("fly").innerHTML = str;
 		}
 	</script>
